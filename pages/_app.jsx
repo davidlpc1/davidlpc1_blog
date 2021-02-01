@@ -1,4 +1,7 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
  :root {
@@ -44,17 +47,18 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
   colors: {
     primary: '#fff62d',
-    secondary:'#394679'
+    secondary: '#394679',
   },
-}
+};
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }

@@ -1,11 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
 
-import Link from "../components/Link";
-import Fotter from "../components/Footer";
+import React from 'react';
+import styled from 'styled-components';
+
+import Link from '../components/Link';
+import Fotter from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 
-import getAllPostsContent from "../scripts/blog/getAllPostsContent"
+import getAllPostsContent from '../scripts/blog/getAllPostsContent';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -36,15 +39,19 @@ const Post = styled.article`
   }
 `;
 
-export default function Home({ repos,posts }) {
+export default function Home({ repos, posts }) {
   return (
     <div>
       <HeaderContainer>
-        <a target="_blank" href="https://github.com/davidlpc1">
-          <img src="https://github.com/davidlpc1.png"></img>
+        <a target="_blank" href="https://github.com/davidlpc1" rel="noreferrer">
+          <img src="https://github.com/davidlpc1.png" alt="Davidlpc1" />
         </a>
         <Link href="/about">
-          <h1>Davi's Blog</h1>
+          <h1>
+            {'Davi\'s'}
+            {' '}
+            Blog
+          </h1>
         </Link>
       </HeaderContainer>
 
@@ -56,7 +63,7 @@ export default function Home({ repos,posts }) {
             <h2>
               <Link href={`/posts/${post.metadata.slug}`}>{ post.metadata.title }</Link>
             </h2>
-        
+
             <p>
               {post.metadata.excerpt}
             </p>
@@ -67,13 +74,15 @@ export default function Home({ repos,posts }) {
       <Container>
         <Subtitle>Repositórios favoritos</Subtitle>
 
-        {repos.map(({ repo, owner, description, language, stars }) => (
+        {repos.map(({
+          repo, owner, description, language, stars,
+        }) => (
           <Post key={`${repo}`}>
-            <a target="_blank" href={`https://github.com/${owner}/${repo}`}>{repo}</a>
+            <a target="_blank" href={`https://github.com/${owner}/${repo}`} rel="noreferrer">{repo}</a>
 
             <p>
-              {description ||
-                `Projeto feito com ${language} e tem ${stars} estrela(s)`}
+              {description
+                || `Projeto feito com ${language} e tem ${stars} estrela(s)`}
             </p>
           </Post>
         ))}
@@ -86,7 +95,7 @@ export default function Home({ repos,posts }) {
 
 export async function getStaticProps() {
   const repos = await fetch(
-    "https://gh-pinned-repos.now.sh/?username=davidlpc1"
+    'https://gh-pinned-repos.now.sh/?username=davidlpc1',
   ).then((res) => res.json());
 
   const posts = getAllPostsContent();
@@ -94,7 +103,7 @@ export async function getStaticProps() {
   return {
     props: {
       repos,
-      posts
+      posts,
     },
   };
 }
