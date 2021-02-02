@@ -1,3 +1,9 @@
+---
+  title: 'Padrões de commits'
+  date: '2021-02-01'
+  excerpt: 'Padrões para se seguir no github'
+---
+
 <h1 align="center">
 📄<br>Padrões de commits 
 </h1>
