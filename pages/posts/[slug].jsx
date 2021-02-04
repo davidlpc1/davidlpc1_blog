@@ -16,6 +16,7 @@ export default function Post({ dataOfFile }) {
       <h1>{ dataOfFile.metadata.title }</h1>
       <p>
         Feito em
+        {' '}
         { dataOfFile.metadata.date }
       </p>
       <div>
