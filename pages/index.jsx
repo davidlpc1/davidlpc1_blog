@@ -9,7 +9,6 @@ import Fotter from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 
 import getAllPostsContent from '../scripts/blog/getAllPostsContent';
-import getTheLastThreeInstagramPosts from '../scripts/blog/getTheLastThreeInstagramPosts';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -40,7 +39,7 @@ const Post = styled.article`
   }
 `;
 
-export default function Home({ repos, posts, lastThreeInstagramPosts }) {
+export default function Home({ repos, posts }) {
   return (
     <div>
       <HeaderContainer>
@@ -89,16 +88,6 @@ export default function Home({ repos, posts, lastThreeInstagramPosts }) {
         ))}
       </Container>
 
-      <Container>
-        <Subtitle>Ultimos posts do instagram</Subtitle>
-
-        {lastThreeInstagramPosts.map(({
-          src,
-        }) => (
-          <img key={`instagramPost--${src}`} src={src} alt="Post do instagram" height={280} />
-        ))}
-      </Container>
-
       <Fotter />
     </div>
   );
@@ -110,13 +99,11 @@ export async function getStaticProps() {
   ).then((res) => res.json());
 
   const posts = getAllPostsContent();
-  const lastThreeInstagramPosts = await getTheLastThreeInstagramPosts();
 
   return {
     props: {
       repos,
       posts,
-      lastThreeInstagramPosts,
     },
   };
 }
