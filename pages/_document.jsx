@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable react/react-in-jsx-scope */
 // eslint-disable-next-line import/no-unresolved
+import React from 'react';
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 

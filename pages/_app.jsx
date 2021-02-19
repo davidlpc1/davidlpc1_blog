@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   
   html,
   body {
+    height:100%;
     margin: 0;
     padding: 0;
   }
