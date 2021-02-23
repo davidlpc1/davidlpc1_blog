@@ -6,6 +6,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
  :root {
     --primary: #fff62d;
+    --primary-light:#fff62dcc;
     --secondary:#394679;
   }
   * {

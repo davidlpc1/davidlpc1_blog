@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import dynamic from 'next/dynamic';
 import MarkdownIt from 'markdown-it';
 import 'react-markdown-editor-lite/lib/index.css';
 
+import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Subtitle from '../components/Subtitle';
+import Button from '../components/Button';
+
+const Input = styled.input`
+  display: block; 
+
+  padding: 0.7rem;
+  font-size: 0.8rem;
+
+  border: 0;
+  outline: 0;
+  border-radius: 3px;
+
+  background: var(--primary);
+  color:var(--secondary);
+`;
 
 const MdEditor = dynamic(() => import('react-markdown-editor-lite'), {
   ssr: false,
 });
 
 export default function Create() {
-  const [markdownOfNewPost, setMarkdownOfNewPost] = React.useState('');
-  const [titleOfNewPost, setTitleOfNewPost] = React.useState('');
+  const [markdownOfNewPost, setMarkdownOfNewPost] = useState('');
+  const [titleOfNewPost, setTitleOfNewPost] = useState('');
 
   const mdParser = new MarkdownIt({
     breaks: true,
@@ -22,8 +38,7 @@ export default function Create() {
   return (
     <>
       <Subtitle>Create a new Post</Subtitle>
-      <input
-        style={{ display: 'block' }}
+      <Input
         type="text"
         placeholder="Nome do post"
         maxLength="70"
@@ -37,18 +52,21 @@ export default function Create() {
           return mdParser.render(text);
         }}
       />
-      <button
+      <Button
         type="button"
         disabled={markdownOfNewPost.length === 0}
         onClick={() => {
           fetch('/api/create', {
             method: 'POST',
-            body: JSON.stringify({ markdown: markdownOfNewPost, title: titleOfNewPost }),
+            body: JSON.stringify({
+              markdown: markdownOfNewPost,
+              title: titleOfNewPost,
+            }),
           });
         }}
       >
         Criar
-      </button>
+      </Button>
       <Footer />
     </>
   );
