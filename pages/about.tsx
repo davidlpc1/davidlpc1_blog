@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -25,9 +26,12 @@ const ImageContainer = styled.div`
  }
 `;
 
-export default function Sobre() {
+export default function About() {
   return (
     <>
+      <Head>
+        <title>About | Davidlpc1</title>
+      </Head>
       <h1>
         <Link href="/">Davi Lucas</Link>
       </h1>

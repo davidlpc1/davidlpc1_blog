@@ -3,12 +3,14 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { GetStaticProps } from 'next'
 
 import Link from '../components/Link';
 import Fotter from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 
 import getAllPostsContent from '../scripts/blog/getAllPostsContent';
+import Head from 'next/head';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -39,9 +41,35 @@ const Post = styled.article`
   }
 `;
 
-export default function Home({ repos, posts }) {
+interface HomeProps {
+  repos:[
+    {
+      repo:number;
+      owner:number;
+      description:number;
+      language:number;
+      stars:number;
+    }
+  ],
+  posts: [
+    {
+      metadata:{
+        title:string;
+        date:string;
+        excerpt:string;
+        slug:string;
+      };
+      content:string;
+    }
+  ]
+}
+
+export default function Home({ repos, posts }:HomeProps) {
   return (
     <div>
+      <Head>
+        <title>Home | Davidlpc1</title>
+      </Head>
       <HeaderContainer>
         <a target="_blank" href="https://github.com/davidlpc1" rel="noreferrer">
           <img src="https://github.com/davidlpc1.png" alt="Davidlpc1" />
@@ -93,7 +121,7 @@ export default function Home({ repos, posts }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps : GetStaticProps = async() => {
   const repos = await fetch(
     'https://gh-pinned-repos.now.sh/?username=davidlpc1',
   ).then((res) => res.json());
