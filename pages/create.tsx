@@ -47,7 +47,7 @@ export default function Create() {
       />
       <MdEditor
         style={{ height: '500px', marginTop: 25 }}
-        renderHTML={(text) => {
+        renderHTML={(text:string) => {
           setMarkdownOfNewPost(text);
           return mdParser.render(text);
         }}

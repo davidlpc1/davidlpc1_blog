@@ -25,7 +25,7 @@ const ImageContainer = styled.div`
  }
 `;
 
-export default function Sobre() {
+export default function About() {
   return (
     <>
       <h1>

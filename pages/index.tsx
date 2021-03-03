@@ -3,6 +3,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { GetStaticProps } from 'next'
 
 import Link from '../components/Link';
 import Fotter from '../components/Footer';
@@ -39,7 +40,30 @@ const Post = styled.article`
   }
 `;
 
-export default function Home({ repos, posts }) {
+interface HomeProps {
+  repos:[
+    {
+      repo:number;
+      owner:number;
+      description:number;
+      language:number;
+      stars:number;
+    }
+  ],
+  posts: [
+    {
+      metadata:{
+        title:string;
+        date:string;
+        excerpt:string;
+        slug:string;
+      };
+      content:string;
+    }
+  ]
+}
+
+export default function Home({ repos, posts }:HomeProps) {
   return (
     <div>
       <HeaderContainer>
@@ -93,7 +117,7 @@ export default function Home({ repos, posts }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps : GetStaticProps = async() => {
   const repos = await fetch(
     'https://gh-pinned-repos.now.sh/?username=davidlpc1',
   ).then((res) => res.json());
