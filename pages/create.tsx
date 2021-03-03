@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
+import Head from 'next/head';
 
 const Input = styled.input`
   display: block; 
@@ -37,11 +38,14 @@ export default function Create() {
 
   return (
     <>
+      <Head>
+        <title>Create a New Post | Davidlpc1</title>
+      </Head>
       <Subtitle>Create a new Post</Subtitle>
       <Input
         type="text"
         placeholder="Nome do post"
-        maxLength="70"
+        maxLength={70}
         value={titleOfNewPost}
         onChange={(event) => setTitleOfNewPost(event.target.value)}
       />

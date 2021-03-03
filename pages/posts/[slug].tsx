@@ -6,6 +6,7 @@ import Link from "../../components/Link";
 
 import getAllPostsPaths from "../../scripts/blog/getAllPostsPaths";
 import getOnePostContent from "../../scripts/blog/getOnePostContent";
+import Head from 'next/head';
 
 interface PostProps {
   dataOfFile: {
@@ -22,6 +23,9 @@ interface PostProps {
 export default function Post({ dataOfFile }: PostProps) {
   return (
     <div>
+      <Head>
+        <title>{dataOfFile.metadata.title} | Davidlpc1</title>
+      </Head>
       <Link href="/">{"<--"} </Link>
       <h1>{dataOfFile.metadata.title}</h1>
       <p>Feito em {dataOfFile.metadata.date}</p>

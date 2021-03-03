@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React,{ ReactNode } from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
@@ -31,11 +31,18 @@ const StyledButton = styled.button`
     }
 `;
 
+interface ButtonProps {
+  children:ReactNode;
+  onClick:() => void;
+  type:"button" | "submit" | "reset";
+  disabled: boolean;
+}
+
 export default function Button({
-  children, onClick, type, disabled, ...props
-}) {
+  children, onClick, type, disabled,
+} :ButtonProps) {
   return (
-    <StyledButton type={type} onClick={onClick} disabled={disabled} {...props}>
+    <StyledButton type={type} onClick={onClick} disabled={disabled}>
       {children}
     </StyledButton>
   );

@@ -10,6 +10,7 @@ import Fotter from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 
 import getAllPostsContent from '../scripts/blog/getAllPostsContent';
+import Head from 'next/head';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -66,6 +67,9 @@ interface HomeProps {
 export default function Home({ repos, posts }:HomeProps) {
   return (
     <div>
+      <Head>
+        <title>Home | Davidlpc1</title>
+      </Head>
       <HeaderContainer>
         <a target="_blank" href="https://github.com/davidlpc1" rel="noreferrer">
           <img src="https://github.com/davidlpc1.png" alt="Davidlpc1" />
