@@ -2,7 +2,6 @@ import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 
-import Footer from '../components/Footer';
 import Link from '../components/Link';
 import Subtitle from '../components/Subtitle';
 
@@ -71,8 +70,6 @@ export default function About() {
         <li><a target="_blank" href="https://instagram.com/davidlpc1" rel="noreferrer">Instagram</a></li>
         <li><a target="_blank" href="https://twitter.com/ProgramadorDavi" rel="noreferrer">Twitter</a></li>
       </List>
-
-      <Footer />
     </>
   );
 }

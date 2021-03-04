@@ -5,7 +5,6 @@ import MarkdownIt from 'markdown-it';
 import 'react-markdown-editor-lite/lib/index.css';
 
 import styled from 'styled-components';
-import Footer from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 import Button from '../components/Button';
 import Head from 'next/head';
@@ -71,7 +70,6 @@ export default function Create() {
       >
         Criar
       </Button>
-      <Footer />
     </>
   );
 }

@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { GetStaticProps } from 'next'
 
 import Link from '../components/Link';
-import Fotter from '../components/Footer';
 import Subtitle from '../components/Subtitle';
 
 import getAllPostsContent from '../scripts/blog/getAllPostsContent';
@@ -115,8 +114,6 @@ export default function Home({ repos, posts }:HomeProps) {
           </Post>
         ))}
       </Container>
-
-      <Fotter />
     </div>
   );
 }
