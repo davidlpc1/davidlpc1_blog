@@ -11,10 +11,8 @@ export default function textProduction(){
             <Subtitle>Trabalho de Produção de texto</Subtitle>
  
             <div style={{ height:'100%',display: 'flex',justifyContent: 'center',alignItems: 'center' }}>
-               
-                <video style={{ height:'20rem',width:'40rem' }} controls  src="/school/textProduction.mp4">
-                    O seu navegador não suporta o vídeo
-                </video>
+                <iframe width="853" height="480" src="https://www.youtube.com/embed/m1dVVr8OTRY" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
+                ></iframe>
             </div>
         </div>
     )
