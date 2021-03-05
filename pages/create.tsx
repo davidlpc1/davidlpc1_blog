@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React
+// { useState } 
+from 'react';
 
-import dynamic from 'next/dynamic';
-import MarkdownIt from 'markdown-it';
+// import dynamic from 'next/dynamic';
+// import MarkdownIt from 'markdown-it';
 import 'react-markdown-editor-lite/lib/index.css';
 
 import styled from 'styled-components';
 import Subtitle from '../components/Subtitle';
-import Button from '../components/Button';
+// import Button from '../components/Button';
 import Head from 'next/head';
 
 const Input = styled.input`
@@ -23,17 +25,17 @@ const Input = styled.input`
   color:var(--secondary);
 `;
 
-const MdEditor = dynamic(() => import('react-markdown-editor-lite'), {
-  ssr: false,
-});
+// const MdEditor = dynamic(() => import('react-markdown-editor-lite'), {
+//   ssr: false,
+// });
 
 export default function Create() {
-  const [markdownOfNewPost, setMarkdownOfNewPost] = useState('');
-  const [titleOfNewPost, setTitleOfNewPost] = useState('');
+  // const [markdownOfNewPost, setMarkdownOfNewPost] = useState('');
+  // const [titleOfNewPost, setTitleOfNewPost] = useState('');
 
-  const mdParser = new MarkdownIt({
-    breaks: true,
-  });
+  // const mdParser = new MarkdownIt({
+  //   breaks: true,
+  // });
 
   return (
     <>
@@ -41,7 +43,7 @@ export default function Create() {
         <title>Create a New Post | Davidlpc1</title>
       </Head>
       <Subtitle>Create a new Post</Subtitle>
-      <Input
+      {/* <Input
         type="text"
         placeholder="Nome do post"
         maxLength={70}
@@ -69,7 +71,7 @@ export default function Create() {
         }}
       >
         Criar
-      </Button>
+      </Button> */}
     </>
   );
 }
