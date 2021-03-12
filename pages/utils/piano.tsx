@@ -74,40 +74,47 @@ export default function Piano() {
     { key: 186, note: "E", audio: "/music/056.wav" },
   ];
   function playNote(audioName) {
+    if(!audioName) return;
     new Audio(audioName).play();
   }
   return (
     <>
-      <Head>
-        <title>Piano | Davidlpc1</title>
-      </Head>
-      <Subtitle>Piano</Subtitle>
-      <Container as="ul">
-        {keys.map(({ key, note, audio }, index) => {
-          if (note.includes("#")) return;
-          const existSameKeyWithHash = keysWithTwoSounds.find(
-            (keySound) => note == keySound
-          );
-          return (
-            <li tabIndex={index + 1} key={`${key}-${note}`}>
-              <div
-                className="white key"
-                data-key={key}
-                data-note={note}
-                onClick={() => playNote(audio)}
-              ></div>
-              {existSameKeyWithHash !== undefined && (
+      <div tabIndex={0} onKeyDown={({ keyCode }) => {
+        const pressedKey = keys.find(({ key }) => key === keyCode)
+        if(!pressedKey) return;
+        playNote(pressedKey.audio)
+      }}>
+        <Head>
+          <title>Piano | Davidlpc1</title>
+        </Head>
+        <Subtitle>Piano</Subtitle>
+        <Container as="ul">
+          {keys.map(({ key, note, audio }, index) => {
+            if (note.includes("#")) return;
+            const existSameKeyWithHash = keysWithTwoSounds.find(
+              (keySound) => note == keySound
+            );
+            return (
+              <li tabIndex={index + 1} key={`${key}-${note}`}>
                 <div
-                  className="black key"
-                  onClick={() => playNote(keys[index + 1].audio)}
-                  data-key={keys[index + 1].key}
-                  data-note={keys[index + 1].note}
+                  className="white key"
+                  data-key={key}
+                  data-note={note}
+                  onClick={() => playNote(audio)}
                 ></div>
-              )}
-            </li>
-          );
-        })}
-      </Container>
+                {existSameKeyWithHash !== undefined && (
+                  <div
+                    className="black key"
+                    onClick={() => playNote(keys[index + 1].audio)}
+                    data-key={keys[index + 1].key}
+                    data-note={keys[index + 1].note}
+                  ></div>
+                )}
+              </li>
+            );
+          })}
+        </Container>
+      </div>
     </>
   );
 }
