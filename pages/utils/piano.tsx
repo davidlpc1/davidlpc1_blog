@@ -79,7 +79,7 @@ export default function Piano() {
   }
   return (
     <>
-      <div tabIndex={0} onKeyDown={({ keyCode }) => {
+      <div style={{ outline:0 }} tabIndex={0} onKeyDown={({ keyCode }) => {
         const pressedKey = keys.find(({ key }) => key === keyCode)
         if(!pressedKey) return;
         playNote(pressedKey.audio)
