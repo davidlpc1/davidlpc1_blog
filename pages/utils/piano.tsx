@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Head from "next/head";
 import Subtitle from "../../components/Subtitle";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 95%;
@@ -53,6 +54,7 @@ const Container = styled.div`
 `;
 
 export default function Piano() {
+  const [actualAudio,setActualAudio] = useState(null)
   const keysWithTwoSounds = ["C", "D", "F", "G", "A"];
   const keys = [
     { key: 65, note: "C", audio: "/music/040.wav" },
@@ -73,13 +75,20 @@ export default function Piano() {
     { key: 80, note: "D#", audio: "/music/055.wav" },
     { key: 186, note: "E", audio: "/music/056.wav" },
   ];
+  
   function playNote(audioName) {
     if(!audioName) return;
-    new Audio(audioName).play();
+    const audio = new Audio(audioName);
+
+    if(actualAudio) actualAudio.pause();
+
+    setActualAudio(audio);
+    audio.play();
   }
+
   return (
     <>
-      <div style={{ outline:0 }} tabIndex={0} onKeyDown={({ keyCode }) => {
+      <div style={{ outline:0,height:'100%' }} tabIndex={0} onKeyDown={({ keyCode }) => {
         const pressedKey = keys.find(({ key }) => key === keyCode)
         if(!pressedKey) return;
         playNote(pressedKey.audio)
