@@ -1,0 +1,48 @@
+{
+  "name": "Davidlpc1 Blog",
+  "short_name": "Davi's Blog",
+  "icons": [
+    {
+        "src": "/icons/icon-24x24.png",
+        "sizes": "24x24",
+        "type": "image/png"
+    },
+    {
+        "src": "/icons/icon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+    },
+    {
+        "src": "/icons/icon-64x64.png",
+        "sizes": "64x64",
+        "type": "image/png"
+    },
+    {
+        "src": "/icons/icon-128x128.png",
+        "sizes": "128x128",
+        "type": "image/png",
+        "purpose":"maskable"
+    },
+    {
+        "src": "/icons/icon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    },
+    {
+        "src": "/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+  ],
+  "gcm_sender_id": "",
+  "gcm_user_visible_only": true,
+  "start_url": "/",
+  "permissions": [
+    "gcm"
+  ],
+  "scope": "/",
+  "orientation": "portrait",
+  "display": "browser",
+  "theme_color": "#394679",
+  "background_color": "#fff62d"
+}

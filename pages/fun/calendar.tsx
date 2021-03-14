@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import Subtitle from "../../components/Subtitle";
-import Head from "../../components/Head";
+
+import dynamic from 'next/dynamic';
+const Head = dynamic(() => import("../../components/Head"));
 // import { GetStaticProps } from "next";
+const Subtitle = dynamic(() => import("../../components/Subtitle"));
+
 
 interface howDaysThisMonthHasProps {
   month: number;

@@ -2,11 +2,12 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-import Link from "../../components/Link";
-
 import getAllPostsPaths from "../../scripts/blog/getAllPostsPaths";
 import getOnePostContent from "../../scripts/blog/getOnePostContent";
-import Head from 'next/head';
+
+import dynamic from 'next/dynamic';
+const Head = dynamic(() => import("../../components/Head"));
+const Link = dynamic(() => import("../../components/Link"));
 
 interface PostProps {
   dataOfFile: {

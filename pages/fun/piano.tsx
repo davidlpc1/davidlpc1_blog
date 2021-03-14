@@ -1,7 +1,11 @@
 import styled from "styled-components";
-import Head from "../../components/Head";
-import Subtitle from "../../components/Subtitle";
+
 import { useState } from "react";
+
+import dynamic from 'next/dynamic';
+const Head = dynamic(() => import("../../components/Head"));
+const Subtitle = dynamic(() => import("../../components/Subtitle"));
+
 
 const Container = styled.div`
   width: 95%;
