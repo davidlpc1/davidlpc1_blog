@@ -9,6 +9,7 @@ import Link from "../components/Link";
 import Subtitle from "../components/Subtitle";
 
 import getAllPostsContent from "../scripts/blog/getAllPostsContent";
+import getAllFunRoutes from "../scripts/fun/getAllFunRoutes";
 import Head from "../components/Head";
 
 const HeaderContainer = styled.header`
@@ -37,6 +38,7 @@ const Post = styled.article`
   a {
     font-weight: bold;
     text-decoration: none;
+    text-transform: capitalize;
   }
 `;
 
@@ -61,9 +63,10 @@ interface HomeProps {
       content: string;
     }
   ];
+  funRoutes: [{ filename: string }];
 }
 
-export default function Home({ repos, posts }: HomeProps) {
+export default function Home({ repos, posts, funRoutes }: HomeProps) {
   return (
     <div>
       <Head>
@@ -90,6 +93,22 @@ export default function Home({ repos, posts }: HomeProps) {
             </h2>
 
             <p>{post.metadata.excerpt}</p>
+          </Post>
+        ))}
+      </Container>
+
+      <Container>
+        <Subtitle>Fun Routes</Subtitle>
+
+        {funRoutes.map(({ filename }) => (
+          <Post key={filename}>
+            <h2>
+              <Link href={`/fun/${filename}`}>{filename}</Link>
+            </h2>
+
+            <p>
+              Acesse já
+            </p>
           </Post>
         ))}
       </Container>
@@ -124,11 +143,13 @@ export const getStaticProps: GetStaticProps = async () => {
   ).then((res) => res.json());
 
   const posts = getAllPostsContent();
+  const funRoutes = getAllFunRoutes();
 
   return {
     props: {
       repos,
       posts,
+      funRoutes,
     },
   };
 };
