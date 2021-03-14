@@ -9,6 +9,9 @@ export default function Head({ children }: HeadProps) {
     <NextHead>
       {/* Image Of WebSite */}
       <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+      {/* Font */}
+      <link rel="preconnect" href="https://fonts.gstatic.com"/>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"/> 
       {/* Pwa Meta Tags */}
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -54,10 +57,10 @@ export default function Head({ children }: HeadProps) {
       <meta name="screen-orientation" content="portrait"></meta>
 
       <link
-        href="/icons/icon-16x16.png"
+        href="/icons/icon-24x24.png"
         rel="icon"
         type="image/png"
-        sizes="16x16"
+        sizes="24x24"
       />
       <link
         href="/icons/icon-32x32.png"
@@ -66,10 +69,22 @@ export default function Head({ children }: HeadProps) {
         sizes="32x32"
       />
       <link
+        href="/icons/icon-48x48.png"
+        rel="icon"
+        type="image/png"
+        sizes="48x48"
+      />
+      <link
         href="/icons/icon-64x64.png"
         rel="icon"
         type="image/png"
         sizes="64x64"
+      />
+      <link
+        href="/icons/icon-96x96.png"
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
       />
       <link
         href="/icons/icon-128x128.png"
@@ -78,10 +93,34 @@ export default function Head({ children }: HeadProps) {
         sizes="128x128"
       />
       <link
+        href="/icons/icon-144x144.png"
+        rel="icon"
+        type="image/png"
+        sizes="144x144"
+      />
+      <link
+        href="/icons/icon-152x152.png"
+        rel="icon"
+        type="image/png"
+        sizes="152x152"
+      />
+      <link
+        href="/icons/icon-192x192.png"
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+      />
+      <link
         href="/icons/icon-256x256.png"
         rel="icon"
         type="image/png"
         sizes="256x256"
+      />
+      <link
+        href="/icons/icon-384x384.png"
+        rel="icon"
+        type="image/png"
+        sizes="384x384"
       />
       <link
         href="/icons/icon-512x512.png"
@@ -89,8 +128,13 @@ export default function Head({ children }: HeadProps) {
         type="image/png"
         sizes="512x512"
       />
+      <link
+        href="/icons/icon-1200x1200.png"
+        rel="icon"
+        type="image/png"
+        sizes="1200x1200"
+      />
 
-      <link href="/icons/icon-64x64.png" rel="apple-touch-icon" />
       <link href="/icons/icon-64x64.png" rel="apple-touch-icon" sizes="64x64" />
       <link
         href="/icons/icon-128x128.png"
@@ -102,6 +146,7 @@ export default function Head({ children }: HeadProps) {
         rel="apple-touch-icon"
         sizes="256x256"
       />
+      <link href="/icons/icon-96x96.png" rel="apple-touch-icon" sizes="96x96" />
 
       <link href="/icons/icon-512x512.png" rel="apple-touch-startup-image" />
 
@@ -112,8 +157,7 @@ export default function Head({ children }: HeadProps) {
         color="red"
       />
 
-      {/* <link href="icon-192x192.png" rel="icon" sizes="192x192" /> */}
-      <link href="icons/icon-128x128.png" rel="icon" sizes="128x128" />
+      <link href="icons/icon-192x192.png" rel="icon" sizes="192x192" />
 
       <link
         href="/icons/icon-64x64.png"

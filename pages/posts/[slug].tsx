@@ -7,7 +7,7 @@ import getOnePostContent from "../../scripts/blog/getOnePostContent";
 
 import dynamic from 'next/dynamic';
 const Head = dynamic(() => import("../../components/Head"));
-const Link = dynamic(() => import("../../components/Link"));
+const Back = dynamic(() => import("../../components/Back"));
 
 interface PostProps {
   dataOfFile: {
@@ -27,9 +27,7 @@ export default function Post({ dataOfFile }: PostProps) {
       <Head>
         <title>{dataOfFile.metadata.title} | Davidlpc1</title>
       </Head>
-      <Link href="/">
-        <img width={28} height={28} src="/images/arrow-back.png" alt="Back to Home" />
-      </Link>
+      <Back href="/" />
       <h1>{dataOfFile.metadata.title}</h1>
       <p>Feito em {new Date(dataOfFile.metadata.date).toDateString()}</p>
       <div style={{ marginBottom: 20 }}>

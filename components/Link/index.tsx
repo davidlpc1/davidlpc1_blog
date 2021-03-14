@@ -6,12 +6,13 @@ import Link from 'next/link';
 interface LinkProps {
   href:string;
   children: ReactNode;
+  style?:Object;
 }
 
-export default function LinkComponent({ href, children }:LinkProps) {
+export default function LinkComponent({ href, children,style }:LinkProps) {
   return (
     <Link href={href}>
-      <a>
+      <a style={style}>
         { children }
       </a>
     </Link>

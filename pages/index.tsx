@@ -35,7 +35,8 @@ const HeaderContainer = styled.header`
   }
 `;
 const Container = styled.section``;
-const Post = styled.article`
+const Post = styled.li`
+  list-style:none;
   a {
     font-weight: bold;
     text-decoration: none;
@@ -85,54 +86,61 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
       <Container>
         <Subtitle>Posts</Subtitle>
 
-        {posts.map((post) => (
-          <Post key={post.metadata.title}>
-            <h2>
-              <Link href={`/posts/${post.metadata.slug}`}>
-                {post.metadata.title}
-              </Link>
-            </h2>
+        <ul style={{padding:0}}>
+          {posts.map((post) => (
+            <Post key={post.metadata.title}>
+              <h2>
+                <Link href={`/posts/${post.metadata.slug}`}>
+                  {post.metadata.title}
+                </Link>
+              </h2>
 
-            <p>{post.metadata.excerpt}</p>
-          </Post>
-        ))}
+              <p>{post.metadata.excerpt}</p>
+            </Post>
+          ))}
+        </ul>
+        
       </Container>
 
       <Container>
         <Subtitle>Fun Routes</Subtitle>
+          
+        <ul style={{padding:0}}>
+          {funRoutes.map(({ filename }) => (
+            <Post key={filename}>
+              <h2>
+                <Link href={`/fun/${filename}`}>{filename}</Link>
+              </h2>
 
-        {funRoutes.map(({ filename }) => (
-          <Post key={filename}>
-            <h2>
-              <Link href={`/fun/${filename}`}>{filename}</Link>
-            </h2>
-
-            <p>
-              Acesse já
-            </p>
-          </Post>
-        ))}
+              <p>
+                Acesse já
+              </p>
+            </Post>
+          ))}
+        </ul>
       </Container>
 
       <Container>
         <Subtitle>Repositórios favoritos</Subtitle>
 
-        {repos.map(({ repo, owner, description, language, stars }) => (
-          <Post key={`${repo}`}>
-            <a
-              target="_blank"
-              href={`https://github.com/${owner}/${repo}`}
-              rel="noreferrer"
-            >
-              {repo}
-            </a>
+        <ul style={{padding:0}}>
+          {repos.map(({ repo, owner, description, language, stars }) => (
+            <Post key={`${repo}`}>
+              <a
+                target="_blank"
+                href={`https://github.com/${owner}/${repo}`}
+                rel="noreferrer"
+              >
+                {repo}
+              </a>
 
-            <p>
-              {description ||
-                `Projeto feito com ${language} e tem ${stars} estrela(s)`}
-            </p>
-          </Post>
-        ))}
+              <p>
+                {description ||
+                  `Projeto feito com ${language} e tem ${stars} estrela(s)`}
+              </p>
+            </Post>
+          ))}
+        </ul>
       </Container>
     </div>
   );

@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --secondary:#394679;
   }
   * {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #999;
     box-sizing: border-box;
   }

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 const Head = dynamic(() => import("../../components/Head"));
 // import { GetStaticProps } from "next";
 const Subtitle = dynamic(() => import("../../components/Subtitle"));
+const Back = dynamic(() => import("../../components/Back"));
 
 interface howDaysThisMonthHasProps {
   month: number;
@@ -70,6 +71,7 @@ export default function Calendar({
       <Head>
         <title>Calendar | Davidlpc1</title>
       </Head>
+      <Back href="/" />
       <Subtitle>Calendar - {actualYear}</Subtitle>
       <ul>
         {months.map((month, index) => {

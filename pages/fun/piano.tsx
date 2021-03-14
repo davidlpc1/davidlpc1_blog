@@ -5,7 +5,7 @@ import { useState } from "react";
 import dynamic from 'next/dynamic';
 const Head = dynamic(() => import("../../components/Head"));
 const Subtitle = dynamic(() => import("../../components/Subtitle"));
-
+const Back = dynamic(() => import("../../components/Back"));
 
 const Container = styled.div`
   width: 95%;
@@ -100,6 +100,7 @@ export default function Piano() {
         <Head>
           <title>Piano | Davidlpc1</title>
         </Head>
+        <Back href="/" />
         <Subtitle>Piano</Subtitle>
         <Container as="ul">
           {keys.map(({ key, note, audio }, index) => {
