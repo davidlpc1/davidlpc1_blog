@@ -111,10 +111,6 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
               <h2>
                 <Link href={`/fun/${filename}`}>{filename}</Link>
               </h2>
-
-              <p>
-                Acesse já
-              </p>
             </Post>
           ))}
         </ul>
