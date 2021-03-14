@@ -5,12 +5,13 @@ import React from "react";
 import styled from "styled-components";
 import { GetStaticProps } from "next";
 
-import Link from "../components/Link";
-import Subtitle from "../components/Subtitle";
-
 import getAllPostsContent from "../scripts/blog/getAllPostsContent";
 import getAllFunRoutes from "../scripts/fun/getAllFunRoutes";
-import Head from "../components/Head";
+
+import dynamic from 'next/dynamic';
+const Head = dynamic(() => import("../components/Head"));
+const Link = dynamic(() => import("../components/Link"));
+const Subtitle = dynamic(() => import("../components/Subtitle"));
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -19,7 +20,7 @@ const HeaderContainer = styled.header`
   padding-bottom: 16px;
   margin-bottom: 32px;
   img {
-    max-width: 50px;
+    /* max-width: 50px; */
     border-radius: 100%;
     margin-right: 16px;
     border: 0.2px solid var(--primary);
@@ -74,7 +75,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
       </Head>
       <HeaderContainer>
         <a target="_blank" href="https://github.com/davidlpc1" rel="noreferrer">
-          <img src="https://github.com/davidlpc1.png" alt="Davidlpc1" />
+          <img width={50} height={50} src="/davidlpc1.jfif" alt="Davidlpc1" />
         </a>
         <Link href="/about">
           <h1>{"Davi's"} Blog</h1>

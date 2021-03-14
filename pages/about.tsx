@@ -1,9 +1,10 @@
-import Head from "../components/Head";
 import React from 'react';
 import styled from 'styled-components';
 
-import Link from '../components/Link';
-import Subtitle from '../components/Subtitle';
+import dynamic from 'next/dynamic';
+const Head = dynamic(() => import("../components/Head"));
+const Link = dynamic(() => import("../components/Link"));
+const Subtitle = dynamic(() => import("../components/Subtitle"));
 
 const List = styled.ul`
   list-style: none;
