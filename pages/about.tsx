@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "../components/Head";
 import React from 'react';
 import styled from 'styled-components';
 

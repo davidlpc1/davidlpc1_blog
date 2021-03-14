@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Subtitle from "../../components/Subtitle";
+import Head from "../../components/Head";
 
 interface howDaysThisMonthHasProps {
   month: number;
@@ -62,6 +63,9 @@ export default function Calendar() {
 
   return (
       <>
+        <Head>
+          <title>Calendar | Davidlpc1</title>
+        </Head>
         <Subtitle>Calendar</Subtitle>
         <ul>
             { months.map((month,index) => {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Head from "next/head";
+import Head from "../../components/Head";
 import Subtitle from "../../components/Subtitle";
 import { useState } from "react";
 

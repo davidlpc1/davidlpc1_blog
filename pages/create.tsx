@@ -9,7 +9,7 @@ import 'react-markdown-editor-lite/lib/index.css';
 import styled from 'styled-components';
 import Subtitle from '../components/Subtitle';
 // import Button from '../components/Button';
-import Head from 'next/head';
+import Head from "../components/Head";
 
 const Input = styled.input`
   display: block; 

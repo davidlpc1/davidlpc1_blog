@@ -1,15 +1,15 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
 
-import React from 'react';
-import styled from 'styled-components';
-import { GetStaticProps } from 'next'
+import React from "react";
+import styled from "styled-components";
+import { GetStaticProps } from "next";
 
-import Link from '../components/Link';
-import Subtitle from '../components/Subtitle';
+import Link from "../components/Link";
+import Subtitle from "../components/Subtitle";
 
-import getAllPostsContent from '../scripts/blog/getAllPostsContent';
-import Head from 'next/head';
+import getAllPostsContent from "../scripts/blog/getAllPostsContent";
+import Head from "../components/Head";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -21,11 +21,11 @@ const HeaderContainer = styled.header`
     max-width: 50px;
     border-radius: 100%;
     margin-right: 16px;
-    border: .2px solid var(--primary);
-    transition: 250ms ease-in-out; 
+    border: 0.2px solid var(--primary);
+    transition: 250ms ease-in-out;
 
-    &:hover{
-      transform: translateY(-.2rem);
+    &:hover {
+      transform: translateY(-0.2rem);
     }
   }
   h1 {
@@ -41,29 +41,29 @@ const Post = styled.article`
 `;
 
 interface HomeProps {
-  repos:[
+  repos: [
     {
-      repo:number;
-      owner:number;
-      description:number;
-      language:number;
-      stars:number;
+      repo: number;
+      owner: number;
+      description: number;
+      language: number;
+      stars: number;
     }
-  ],
+  ];
   posts: [
     {
-      metadata:{
-        title:string;
-        date:string;
-        excerpt:string;
-        slug:string;
+      metadata: {
+        title: string;
+        date: string;
+        excerpt: string;
+        slug: string;
       };
-      content:string;
+      content: string;
     }
-  ]
+  ];
 }
 
-export default function Home({ repos, posts }:HomeProps) {
+export default function Home({ repos, posts }: HomeProps) {
   return (
     <div>
       <Head>
@@ -74,11 +74,7 @@ export default function Home({ repos, posts }:HomeProps) {
           <img src="https://github.com/davidlpc1.png" alt="Davidlpc1" />
         </a>
         <Link href="/about">
-          <h1>
-            {'Davi\'s'}
-            {' '}
-            Blog
-          </h1>
+          <h1>{"Davi's"} Blog</h1>
         </Link>
       </HeaderContainer>
 
@@ -88,12 +84,12 @@ export default function Home({ repos, posts }:HomeProps) {
         {posts.map((post) => (
           <Post key={post.metadata.title}>
             <h2>
-              <Link href={`/posts/${post.metadata.slug}`}>{ post.metadata.title }</Link>
+              <Link href={`/posts/${post.metadata.slug}`}>
+                {post.metadata.title}
+              </Link>
             </h2>
 
-            <p>
-              {post.metadata.excerpt}
-            </p>
+            <p>{post.metadata.excerpt}</p>
           </Post>
         ))}
       </Container>
@@ -101,15 +97,19 @@ export default function Home({ repos, posts }:HomeProps) {
       <Container>
         <Subtitle>Repositórios favoritos</Subtitle>
 
-        {repos.map(({
-          repo, owner, description, language, stars,
-        }) => (
+        {repos.map(({ repo, owner, description, language, stars }) => (
           <Post key={`${repo}`}>
-            <a target="_blank" href={`https://github.com/${owner}/${repo}`} rel="noreferrer">{repo}</a>
+            <a
+              target="_blank"
+              href={`https://github.com/${owner}/${repo}`}
+              rel="noreferrer"
+            >
+              {repo}
+            </a>
 
             <p>
-              {description
-                || `Projeto feito com ${language} e tem ${stars} estrela(s)`}
+              {description ||
+                `Projeto feito com ${language} e tem ${stars} estrela(s)`}
             </p>
           </Post>
         ))}
@@ -118,9 +118,9 @@ export default function Home({ repos, posts }:HomeProps) {
   );
 }
 
-export const getStaticProps : GetStaticProps = async() => {
+export const getStaticProps: GetStaticProps = async () => {
   const repos = await fetch(
-    'https://gh-pinned-repos.now.sh/?username=davidlpc1',
+    "https://gh-pinned-repos.now.sh/?username=davidlpc1"
   ).then((res) => res.json());
 
   const posts = getAllPostsContent();
@@ -131,4 +131,4 @@ export const getStaticProps : GetStaticProps = async() => {
       posts,
     },
   };
-}
+};
