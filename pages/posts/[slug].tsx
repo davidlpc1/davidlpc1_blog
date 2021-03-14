@@ -27,15 +27,18 @@ export default function Post({ dataOfFile }: PostProps) {
       <Head>
         <title>{dataOfFile.metadata.title} | Davidlpc1</title>
       </Head>
-      <Link href="/">{"<--"} </Link>
+      <Link href="/">
+        <img width={28} height={28} src="/images/arrow-back.png" alt="Back to Home" />
+      </Link>
       <h1>{dataOfFile.metadata.title}</h1>
-      <p>Feito em {dataOfFile.metadata.date}</p>
+      <p>Feito em {new Date(dataOfFile.metadata.date).toDateString()}</p>
       <div style={{ marginBottom: 20 }}>
         {/* eslint-disable-next-line jsx-a11y/html-has-lang */}
         {/*  eslint-disable-next-line react/no-danger */}
         <html
           dangerouslySetInnerHTML={{ __html: dataOfFile.content }}
           lang="pt-br"
+          style={{ overflowX:"scroll" }}
         />
       </div>
     </div>

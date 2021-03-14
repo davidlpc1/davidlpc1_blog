@@ -75,7 +75,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
       </Head>
       <HeaderContainer>
         <a target="_blank" href="https://github.com/davidlpc1" rel="noreferrer">
-          <img width={50} height={50} src="/davidlpc1.jfif" alt="Davidlpc1" />
+          <img width={50} height={50} src="/images/davidlpc1.jfif" alt="Davidlpc1" />
         </a>
         <Link href="/about">
           <h1>{"Davi's"} Blog</h1>
