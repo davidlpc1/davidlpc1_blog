@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import Subtitle from "../../components/Subtitle";
 import Head from "../../components/Head";
+// import { GetStaticProps } from "next";
 
 interface howDaysThisMonthHasProps {
   month: number;
   actualYear: number;
+}
+
+interface CalendarProps {
+  months: Array<string>,
+  actualMonth:string,
+  actualDay:number,
+  actualYear:number
 }
 
 const MonthDaysContainer = styled.li`
@@ -34,25 +42,7 @@ const MonthDaysContainer = styled.li`
     }
 `;
 
-export default function Calendar() {
-  const date = new Date();
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const actualMonth = months[date.getMonth()];
-  const actualDay = date.getDate();
-  const actualYear = date.getFullYear();
+export default function Calendar({  months,actualMonth,actualDay,actualYear } : CalendarProps) {
 
   function howDaysThisMonthHas({
     month,
@@ -88,4 +78,32 @@ export default function Calendar() {
         </ul>
       </>
   )
+}
+
+
+export const getStaticProps = () => {
+  const date = new Date();
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const actualMonth = months[date.getMonth()];
+  const actualDay = date.getDate();
+  const actualYear = date.getFullYear();
+
+  return {
+    props:{
+      months,actualMonth,actualDay,actualYear
+    }
+  }
 }
