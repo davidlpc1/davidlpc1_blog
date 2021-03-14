@@ -42,7 +42,7 @@
   ],
   "scope": "/",
   "orientation": "portrait",
-  "display": "browser",
+  "display": "standalone",
   "theme_color": "#394679",
   "background_color": "#fff62d"
 }
