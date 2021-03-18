@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Alert from "../../scripts/alert/alert";
 
 const Head = dynamic(() => import("../../components/Head"));
@@ -83,6 +83,12 @@ export default function Calendar() {
   const [currentNumber,setCurrentNumber] = useState("");
   const [lastNumber,setLastNumber] = useState("");
   
+  useEffect(() => {
+    if(Number(lastNumber) !== NaN) return;
+    
+    setLastNumber(lastNumber.replace(/\D/gim, '') || "0")
+  },[])
+
   function calculator(){
     const splitNumbers = currentNumber.split(' ')
     const [ firstNumberStr,operator,secondNumberStr ] = splitNumbers
@@ -121,6 +127,11 @@ export default function Calendar() {
       return;
     },
     '+/-':() => {
+      // const copyOfCurrentNumber = currentNumber;
+      // copyOfCurrentNumber.replace('+','P').replace('-','M')
+      // setCurrentNumber(copyOfCurrentNumber.replace('P','-').replace('M','+'))
+      // console.log(currentNumber)
+      // return;
       return Alert({title:"This doesn't work yet",footer:""});
     }
   }
@@ -140,7 +151,6 @@ export default function Calendar() {
       </Head>
       <Back href="/" />
       <Subtitle>Calculator</Subtitle>
-      <p>EM CONSTRUÇÃO</p>
       <CalculatorContainer>
         <div>
           <p className="lastNumber">{lastNumber}</p>

@@ -1,14 +1,16 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { GetStaticProps } from "next";
 
 import getAllPostsContent from "../scripts/blog/getAllPostsContent";
 import getAllFunRoutes from "../scripts/fun/getAllFunRoutes";
 
-import dynamic from 'next/dynamic';
+import Confetti from "react-canvas-confetti";
+
+import dynamic from "next/dynamic";
 const Head = dynamic(() => import("../components/Head"));
 const Link = dynamic(() => import("../components/Link"));
 const Subtitle = dynamic(() => import("../components/Subtitle"));
@@ -36,7 +38,7 @@ const HeaderContainer = styled.header`
 `;
 const Container = styled.section``;
 const Post = styled.li`
-  list-style:none;
+  list-style: none;
   a {
     font-weight: bold;
     text-decoration: none;
@@ -69,14 +71,36 @@ interface HomeProps {
 }
 
 export default function Home({ repos, posts, funRoutes }: HomeProps) {
+  const [fire, setFire] = useState(false);
+  const [reset, setReset] = useState(false);
+
+  useEffect(() => {
+    setFire(true);
+    setTimeout(() => {
+      setReset(true);
+      setFire(false);
+    }, 4 * 1000);
+  }, []);
+
   return (
     <div>
       <Head>
         <title>Home | Davidlpc1</title>
       </Head>
+      <Confetti
+        style={{ position: "fixed", width: "100%", height: "100%", zIndex: -1 ,top:0,left:0}}
+        fire={fire}
+        reset={reset}
+        particleCount={350}
+      />
       <HeaderContainer>
         <a target="_blank" href="https://github.com/davidlpc1" rel="noreferrer">
-          <img width={50} height={50} src="/images/davidlpc1.jfif" alt="Davidlpc1" />
+          <img
+            width={50}
+            height={50}
+            src="/images/davidlpc1.jfif"
+            alt="Davidlpc1"
+          />
         </a>
         <Link href="/about">
           <h1>{"Davi's"} Blog</h1>
@@ -86,7 +110,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
       <Container>
         <Subtitle>Posts</Subtitle>
 
-        <ul style={{padding:0}}>
+        <ul style={{ padding: 0 }}>
           {posts.map((post) => (
             <Post key={post.metadata.title}>
               <h2>
@@ -99,13 +123,12 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
             </Post>
           ))}
         </ul>
-        
       </Container>
 
       <Container>
         <Subtitle>Fun Routes</Subtitle>
-          
-        <ul style={{padding:0}}>
+
+        <ul style={{ padding: 0 }}>
           {funRoutes.map(({ filename }) => (
             <Post key={filename}>
               <h2>
@@ -119,7 +142,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
       <Container>
         <Subtitle>Repositórios favoritos</Subtitle>
 
-        <ul style={{padding:0}}>
+        <ul style={{ padding: 0 }}>
           {repos.map(({ repo, owner, description, language, stars }) => (
             <Post key={`${repo}`}>
               <a
