@@ -85,6 +85,7 @@ export default function Calendar() {
   
   useEffect(() => {
     if(Number(lastNumber) !== NaN) return;
+    if(lastNumber !== "NaN") return;
     
     setLastNumber(lastNumber.replace(/\D/gim, '') || "0")
   },[])
