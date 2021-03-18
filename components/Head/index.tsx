@@ -169,11 +169,11 @@ export default function Head({ children }: HeadProps) {
       <link href="/manifest.json" rel="manifest"></link>
 
       {/* Google AdSense */}
-      <script
+      {/* <script
         data-ad-client="ca-pub-4951079875930530"
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      ></script>
+      ></script> */}
       {/* Children */}
       {children}
     </NextHead>
