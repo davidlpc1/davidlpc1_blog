@@ -11,13 +11,6 @@ interface howDaysThisMonthHasProps {
   actualYear: number;
 }
 
-interface CalendarProps {
-  months: Array<string>;
-  actualMonth: string;
-  actualDay: number;
-  actualYear: number;
-}
-
 const MonthDaysContainer = styled.li`
   display: flex;
   margin: 0.75rem;
@@ -53,12 +46,26 @@ const MonthDaysContainer = styled.li`
   }
 `;
 
-export default function Calendar({
-  months,
-  actualMonth,
-  actualDay,
-  actualYear,
-}: CalendarProps) {
+export default function Calendar() {
+  const date = new Date();
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const actualMonth = months[date.getMonth()];
+  const actualDay = date.getDate();
+  const actualYear = date.getFullYear();
+
   function howDaysThisMonthHas({
     month,
     actualYear,
@@ -122,33 +129,3 @@ export default function Calendar({
     </>
   );
 }
-
-export const getStaticProps = () => {
-  const date = new Date();
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const actualMonth = months[date.getMonth()];
-  const actualDay = date.getDate();
-  const actualYear = date.getFullYear();
-
-  return {
-    props: {
-      months,
-      actualMonth,
-      actualDay,
-      actualYear,
-    },
-  };
-};
