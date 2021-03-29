@@ -1,6 +1,6 @@
 ---
   title: 'Padrões de commits'
-  date: '2021-02-01'
+  date: '2021-02-19'
   excerpt: 'Padrões para se seguir no github'
 ---
 
