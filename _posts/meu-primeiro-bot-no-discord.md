@@ -25,3 +25,5 @@ Os comandos seram descritos abaixo com o seu nome e habilidade respectivamente
 - `dl.status`- Mostra o status do bot,seus comandos,seu site e muito mais...
 
 - `dl.news` - Mostra as noticias mais recentes do Brazil de acordo com a <a href="https://newsapi.org/" target="_blank">News Api</a>
+
+- `dl.covid` - Mostra a quantidade de casos,mortes e recuperações por <a href="https://covid19-brazil-api.now.sh" target="_blank">Covid-19</a>
