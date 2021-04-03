@@ -112,7 +112,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
 
         <ul style={{ padding: 0 }}>
           {posts.map((post) => (
-            <Post key={post.metadata.title}>
+            <Post title={post.metadata.title} key={post.metadata.title}>
               <h2>
                 <Link href={`/posts/${post.metadata.slug}`}>
                   {post.metadata.title}
@@ -130,7 +130,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
 
         <ul style={{ padding: 0 }}>
           {funRoutes.map(({ filename }) => (
-            <Post key={filename}>
+            <Post title={filename} key={filename}>
               <h2>
                 <Link href={`/fun/${filename}`}>{filename}</Link>
               </h2>
@@ -144,7 +144,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
 
         <ul style={{ padding: 0 }}>
           {repos.map(({ repo, owner, description, language, stars }) => (
-            <Post key={`${repo}`}>
+            <Post title={String(repo)} key={`${repo}`}>
               <a
                 target="_blank"
                 href={`https://github.com/${owner}/${repo}`}
