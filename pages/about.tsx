@@ -38,9 +38,9 @@ export default function About() {
       <Subtitle>About Me</Subtitle>
 
       <p style={{ paddingLeft: 10 }}>
-        Tenho 14 anos e sou interessado por programação (Linhares, ES).
+        Tenho 15 anos e sou interessado por engenharia de software.
         <br />
-        Sou um desenvolvedor web apaixonado também pelo mundo Back-end.
+        Sou um adolescente apaixonado pela Tecnologia e Matemática
       </p>
 
       <Subtitle>Technologies</Subtitle>

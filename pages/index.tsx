@@ -167,7 +167,7 @@ export default function Home({ repos, posts, funRoutes }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const repos = await fetch(
-    "https://gh-pinned-repos.now.sh/?username=davidlpc1"
+    "https://gh-pinned-repos.egoist.sh/?username=davidlpc1"
   ).then((res) => res.json());
 
   const posts = getAllPostsContent();
