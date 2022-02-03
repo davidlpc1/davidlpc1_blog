@@ -1,5 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
+
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import type { AppProps } from 'next/app';
@@ -11,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     --secondary:#394679;
   }
   * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;p
     color: #eee;
     box-sizing: border-box;
   }

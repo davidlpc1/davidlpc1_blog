@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
 import React, { ReactNode } from 'react';
-// eslint-disable-next-line import/no-unresolved
+
 import Link from 'next/link';
 
 interface LinkProps {

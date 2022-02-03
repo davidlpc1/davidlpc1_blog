@@ -44,6 +44,9 @@ const Post = styled.li`
     text-decoration: none;
     text-transform: capitalize;
   }
+  p {
+    color: #eeeeee;
+  }
 `;
 
 interface HomeProps {

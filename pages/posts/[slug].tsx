@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
+
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from 'next'
 
@@ -31,7 +33,6 @@ export default function Post({ dataOfFile }: PostProps) {
       <h1>{dataOfFile.metadata.title}</h1>
       <p>Feito em {new Date(dataOfFile.metadata.date).toDateString()}</p>
       <div style={{ marginBottom: 20 }}>
-        {/* eslint-disable-next-line jsx-a11y/html-has-lang */}
         {/*  eslint-disable-next-line react/no-danger */}
         <html
           dangerouslySetInnerHTML={{ __html: dataOfFile.content }}
