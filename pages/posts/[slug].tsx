@@ -32,14 +32,11 @@ export default function Post({ dataOfFile }: PostProps) {
       <Back href="/" />
       <h1>{dataOfFile.metadata.title}</h1>
       <p>Feito em {new Date(dataOfFile.metadata.date).toDateString()}</p>
-      <div style={{ marginBottom: 20 }}>
-        {/*  eslint-disable-next-line react/no-danger */}
-        <html
-          dangerouslySetInnerHTML={{ __html: dataOfFile.content }}
-          lang="pt-br"
-          style={{ overflowX:"scroll" }}
-        />
-      </div>
+      <html 
+        style={{ marginBottom: 20,overflowX:"scroll",color:"#eee" }}
+        dangerouslySetInnerHTML={{ __html: dataOfFile.content }}
+        lang="pt-br"
+      />
     </div>
   );
 }

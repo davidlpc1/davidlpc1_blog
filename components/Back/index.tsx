@@ -11,7 +11,6 @@ export default function Back({ href }: BackProps) {
       <Link href={href} style={{ margin:5 }}>
         <img width={28} height={28} src="/images/arrow-back.png" alt="Back" />
       </Link>
-    ]</>
-
+    </>
   );
 }

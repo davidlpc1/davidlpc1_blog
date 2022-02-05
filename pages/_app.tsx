@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-light:#fff62dcc;
     --secondary:#394679;
   }
+  
   * {
     font-family: 'Roboto', sans-serif;p
     color: #eee;

@@ -4,26 +4,16 @@
   excerpt: 'Padrões para se seguir no github'
 ---
 
-<h1 align="center">
-📄<br>Padrões de commits 
-</h1>
 
-<h1 align="center">
-  <img height="200" src="https://raw.githubusercontent.com/davidlpc1/padroes-de-commits/main/gitcommit.png">
-</h1>
+# 📄Padrões de commits 
 
-<p>
-  De acordo com a documentação do <strong>Convetional Commits</strong>, Commits Semânticos são uma convenção simples para ser utilizada nas mensagens de commit. Essa convenção define  um conjunto de regras para criar um histórico de commit explícito, o que facilita a criação de ferramentas automatizadas.
-</p>
+![Project Logo](https://raw.githubusercontent.com/davidlpc1/padroes-de-commits/main/gitcommit.png)
 
-<p>
-  Esses commits auxiliarão você e sua equipe a entenderem de forma facilitada quais alterações foram realizadas no trecho de código que foi commitado.
-</p>
+De acordo com a documentação do **Convetional Commits**, Commits Semânticos são uma convenção simples para ser utilizada nas mensagens de commit. Essa convenção define um conjunto de regras para criar um histórico de commit explícito, o que facilita a criação de ferramentas automatizadas.
+ 
+Esses commits auxiliarão você e sua equipe a entenderem de forma facilitada quais alterações foram realizadas no trecho de código que foi commitado. 
 
-<p>
-  Essa identificação ocorre por meio de uma palavra e emoji que identifica se aquele commit realizado se trata de uma alteração de código, atualização de pacotes, documentação, alteração de visual, teste...
-</p>
-
+Essa identificação ocorre por meio de uma palavra e emoji que identifica se aquele commit realizado se trata de uma alteração de código, atualização de pacotes, documentação, alteração de visual, teste...
 
 ## 🦄 Tipo e Descrição
 
@@ -60,85 +50,57 @@ git commit -m ":tada: Meu primeiro commit"
 ```
 
 ## 💈 Padrões de emojis
-<table>
-  <thead>
-    <tr>
-      <th>Tipo de commit</th>
-      <th>Emojis</th>
-    </tr>
-  </thead>
- <tbody>
-    <tr>
-      <td>Commit inicial</td>
-      <td> 🎉 <code>:tada:</code>   </td>
-    </tr>
-    <tr>
-      <td> Tag de versão  </td>
-      <td> 🔖 <code>:bookmark:</code>   </td>
-    </tr>
-    <tr>
-      <td>  Novo recurso   </td>
-      <td> ✨ <code>:sparkles:</code>   </td>
-    </tr>
-    <tr>
-      <td>  Bugfix  </td>
-      <td> 🐛 <code>:bug:</code>   </td>
-    </tr>
-    <tr>
-      <td>  Documentação  </td>
-      <td> 📚 <code>:books:</code>   </td>
-    </tr>
-    <tr>
-      <td>  Testes  </td>
-      <td> 🚨 <code>:rotating_light: </code>   </td>
-    </tr>
-    <tr>
-      <td>Adicionando um teste</td>
-      <td> ✅ <code> :white_check_mark: </code>   </td>
-    </tr>
-    <tr>
-      <td> Teste de aprovação </td>
-      <td> ✔️ <code> :heavy_check_mark: </code>   </td>
-    </tr>
-    <tr>
-      <td>  Acessibilidade    </td>
-      <td> ♿ <code> :wheelchair: </code>   </td>
-    </tr>
-    <tr>
-      <td>  Texto     </td>
-      <td> 📝 <code> :pencil: </code>   </td>
-    </tr>
-    <tr>
-      <td>  Package.json em JS      </td>
-      <td> 📦 <code> :package: </code>   </td>
-    </tr>
-    <tr>
-      <td>  Em progresso        </td>
-      <td> 🚧 <code> :construction: </code>   </td>
-    </tr>
-    <tr>
-      <td>   Arquivos de configuração        </td>
-      <td> 🔧 <code> :wrench: </code>   </td>
-    </tr>
-    <tr>
-      <td>   Removendo uma dependência        </td>
-      <td> ➖ <code> :heavy_minus_sign: </code>   </td>
-    </tr>
-    <tr>
-      <td>   Adicionando uma dependência        </td>
-      <td> ➕ <code> :heavy_plus_sign: </code>   </td>
-    </tr>
-    <tr>
-      <td>   Revertendo mudanças         </td>
-      <td> 💥 <code> :boom: </code>   </td>
-    </tr>
-    <tr>
-      <td>   Alterações de revisão de código        </td>
-      <td> 👌 <code> :ok_hand: </code>   </td>
-    </tr>
-    <tr>
-      <td>   Mover/Renomear        </td>
-      <td> 🚚 <code> :truck: </code>   </td>
-    </tr>
-  </tbody>
-</table>
+
+- `Commit inicial`
+      🎉 \`:tada:\`
+
+- `Tag de versão`
+      🔖 \`:bookmark:\`
+
+- `Novo recurso`
+      ✨ \`:sparkles:\` 
+
+- `Bugfix`
+      🐛 \`:bug:\`
+
+- `Documentação`
+      📚 \`:books:\`  
+
+- `Testes`
+      🚨 \`:rotating\_light:\`
+
+- `Adicionando um teste`
+      ✅ \`:white\_check\_mark:\`
+
+- `Teste de aprovação`
+      ✔️ \`:heavy\_check\_mark:\`
+
+- `Acessibilidade`
+      ♿ \`:wheelchair:\`
+
+- `Texto`
+      📝 \`:pencil:\`
+
+- `Package.json em JS`
+      📦 \`:package:\`
+
+- `Em progresso`
+      🚧 \`:construction:\`
+
+- `Arquivos de configuração`
+      🔧 \`:wrench:\`
+
+- `Removendo uma dependência`
+      ➖ \`:heavy\_minus\_sign:\`
+
+- `Adicionando uma dependência`
+      ➕ \`:heavy\_plus\_sign:\`
+
+- `Revertendo mudanças`
+      💥 \`:boom:\`
+
+- `Alterações de revisão de código`
+      👌 \`:ok\_hand:\`
+
+- `Mover/Renomear`
+      🚚 \`:truck:\`
